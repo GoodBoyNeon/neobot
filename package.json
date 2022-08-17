@@ -7,8 +7,7 @@
 		"start": "ts-node src/index.ts",
 		"dev": "nodemon src/index.ts",
 		"prod": "node dist/index.js",
-		"build": "tsc",
-		"watch": "tsc -w"
+		"build": "tsc"
 	},
 	"keywords": [],
 	"author": "",
