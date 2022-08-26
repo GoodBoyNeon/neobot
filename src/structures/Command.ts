@@ -14,20 +14,20 @@ export class Command {
 }
 
 export interface CommandType extends ChatInputApplicationCommandData {
-	run: (options: FunctionParams) => Promise<void>;
+  run: (options: FunctionParams) => Promise<void>;
 }
 
 export interface StableInteraction extends CommandInteraction {
-	member: GuildMember;
+  member: GuildMember;
 }
 
 interface FunctionParams {
-	client: BaseClient;
-	interaction: StableInteraction;
-	options: CommandInteractionOptionResolver;
+  client: BaseClient;
+  interaction: StableInteraction;
+  options: CommandInteractionOptionResolver;
 }
 
 export interface RegisterCommandOptions {
-	guildId?: string;
-	commands: ApplicationCommandDataResolvable[];
+  guildId?: string;
+  commands: ApplicationCommandDataResolvable[];
 }
