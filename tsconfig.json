@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"],
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ESNext",
@@ -16,15 +14,10 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "strictNullChecks": true,
+    // "strictNullChecks": true,
+    "strict": true,
     "importsNotUsedAsValues": "remove"
   },
-  "include": [
-    "src",
-    "environment.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["src", "environment.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
