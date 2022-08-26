@@ -4,8 +4,8 @@
 echo 'Optimizing the project before committing...'
 
 npm run format-check || (
-  echo 'FAILED! FORMATTING ERROR! TRYING TO FIX..'
-  npm run format;
+  echo 'FORMAT ERROR!'
+  false;
 )
 
 npm run lint-check ||

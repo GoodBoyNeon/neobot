@@ -14,7 +14,7 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    // "strictNullChecks": true,
+    "removeComments": true,
     "strict": true,
     "importsNotUsedAsValues": "remove"
   },
