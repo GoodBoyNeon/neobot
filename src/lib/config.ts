@@ -1,9 +1,9 @@
-export const config: configType = {
-	clientId: '',
-	testGuildId: '',
-};
-
-export interface configType {
-	clientId: string;
-	testGuildId: string;
+export interface ConfigType {
+  clientId: string | undefined;
+  testGuildId: string | undefined;
 }
+
+export const config: ConfigType = {
+  clientId: process.env.CLIENT_ID,
+  testGuildId: process.env.TEST_GUILD_ID,
+};

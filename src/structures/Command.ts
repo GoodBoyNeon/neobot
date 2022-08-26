@@ -1,22 +1,20 @@
-export class Command {
-	constructor(commandOptions: CommandType) {
-		Object.assign(this, commandOptions);
-	}
-}
 import {
-	ApplicationCommandDataResolvable,
-	CommandInteraction,
-	CommandInteractionOptionResolver,
-	GuildMember,
-	PermissionResolvable,
+  ApplicationCommandDataResolvable,
+  ChatInputApplicationCommandData,
+  CommandInteraction,
+  CommandInteractionOptionResolver,
+  GuildMember,
 } from 'discord.js';
 import { BaseClient } from './BaseClient';
 
-export interface CommandType {
-	name: string;
-	desc: string;
+export class Command {
+  constructor(commandOptions: CommandType) {
+    Object.assign(this, commandOptions);
+  }
+}
+
+export interface CommandType extends ChatInputApplicationCommandData {
 	run: (options: FunctionParams) => Promise<void>;
-	permissions?: PermissionResolvable[];
 }
 
 export interface StableInteraction extends CommandInteraction {
