@@ -1,0 +1,18 @@
+{
+  "command": {
+    "description": "Command Template",
+    "prefix": "command",
+    "body": [
+      "import { Command } from '../../structures/Command';",
+      "",
+      "export default new Command({",
+      "\tname: '$1',",
+      "\tdescription: '$2',",
+      "\toptions: [$3],",
+      "\trun: async({ interaction$4 }) => {",
+      "\t\t$5",
+      "\t}",
+      "})"
+    ]
+  }
+}
