@@ -1,41 +1,49 @@
 {
-	"name": "neobot",
-	"version": "1.0.0",
-	"description": "",
-	"main": "dist/index.js",
-	"scripts": {
-		"start": "ts-node src/index.ts",
-		"dev": "nodemon src/index.ts",
-		"prod": "node dist/index.js",
-		"build": "tsc",
-		"prepare": "husky install",
-		"lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-		"lint:fix": "eslint --ignore-path .eslintignore --fix .",
-		"format": "prettier --config .prettierrc \"./src/**/*{.ts,.js,.json}\" --write"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@discordjs/rest": "^1.0.1",
-		"discord.js": "^14.2.0",
-		"dotenv": "^16.0.1",
-		"glob": "^7.2.0",
-		"path": "^0.12.7",
-		"util": "^0.12.4"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.2.0",
-		"@types/node": "^18.7.6",
-		"@typescript-eslint/eslint-plugin": "^5.34.0",
-		"@typescript-eslint/parser": "^5.34.0",
-		"eslint": "^8.22.0",
-		"eslint-config-prettier": "^8.5.0",
-		"husky": "^8.0.1",
-		"nodemon": "^2.0.19",
-		"prettier": "^2.7.1",
-		"ts-node": "^10.9.1",
-		"typescript": "^4.7.4"
-	},
-	"prepare": "husky install"
+  "name": "neobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "prod": "node dist/index.js",
+    "build": "tsc",
+    "ts-check": "tsc --pretty --noEmit",
+    "format-check": "prettier --check .",
+    "lint-check": "eslint . --ext ts --ext js",
+    "test": "npm run format-check && npm run lint-check && npm run ts-check && npm run build",
+    "prepare": "husky install",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "eslint --ignore-path .eslintignore --fix .",
+    "format": "prettier --config .prettierrc --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "chalk": "4.1.2",
+    "discord.js": "^14.2.0",
+    "dotenv": "^16.0.1",
+    "glob": "^7.2.0",
+    "leekslazylogger": "^4.1.7",
+    "path": "^0.12.7",
+    "util": "^0.12.4",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^18.7.6",
+    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/parser": "^5.34.0",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "prepare": "husky install"
 }

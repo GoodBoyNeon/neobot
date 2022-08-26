@@ -11,6 +11,15 @@ An open-source multi-purpose bot for discord. I did this as an warm-up project f
 
 ## Installation
 
+Follow the instructions below to initialize your bot.
+
+### Requirements
+
+1. NodeJS v16 or above
+1. Basic understanding of Typescript
+
+### Getting the bot online
+
 Install neobot with npm
 
 ```bash

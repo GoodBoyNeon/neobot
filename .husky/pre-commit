@@ -1,6 +1,38 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint:fix
-npm run format
+echo 'Optimizing the project before committing...'
 
+npm run format-check || (
+  echo 'FAILED! FORMATTING ERROR! TRYING TO FIX..'
+  npm run format;
+)
+
+npm run lint-check ||
+(
+  echo 'FAILED! LINTER ERROR! TRYING TO FIX..'
+  npm run lint:fix || (
+    echo 'LINTER FIX FAILED!'
+    false
+  )
+  
+)
+
+# Check tsconfig standards
+npm run ts-check ||
+(
+  echo 'FAILED! TYPESCRIPT ERROR!'
+  false;
+)
+
+# If everything passes... Now we can commit
+echo 'TESTS PASSED!'
+
+npm run build ||
+(
+  'BUILDING FALIED!'
+    false;
+)
+
+# If everything passes... Now we can commit
+echo 'EVERYTHING SEEMS FINE!'
